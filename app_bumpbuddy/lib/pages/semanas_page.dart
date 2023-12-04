@@ -1,3 +1,4 @@
+import 'package:app_bumpbuddy/pages/detalhes_semanas_page.dart';
 import 'package:flutter/material.dart';
 
 class SemanasPage extends StatefulWidget {
@@ -46,9 +47,19 @@ class _SemanasPageState extends State<SemanasPage> {
             scale = 1.0 - position / 500;
           }
           scale = scale.clamp(0.5, 1.0); // Limit the minimum and maximum scale
-          return ParallaxImage(
-            scale: scale,
-            semana: semana,
+          return InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DetalesSemanasPage(
+                            semana: index,
+                          )));
+            },
+            child: ParallaxImage(
+              scale: scale,
+              semana: semana,
+            ),
           );
         },
       ),

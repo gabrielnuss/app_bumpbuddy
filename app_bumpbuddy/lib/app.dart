@@ -10,10 +10,11 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.pink,
-            background: Color.fromARGB(255, 255, 235, 252),
-            primary: Color.fromARGB(255, 249, 201, 242),
-            inverseSurface: Color.fromARGB(255, 242, 153, 230)),
+            seedColor: Color.fromARGB(255, 255, 209, 198),
+            background: Color.fromARGB(255, 255, 209, 198),
+            primary: Color.fromARGB(255, 255, 159, 134),
+            inverseSurface: Colors.white,
+            inversePrimary: Color.fromRGBO(255, 216, 206, 1)),
         useMaterial3: true,
       ),
       home: const MyHomePage(),

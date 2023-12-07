@@ -9,29 +9,37 @@ class CalendarioPage extends StatefulWidget {
 }
 
 class _CalendarioPageState extends State<CalendarioPage> {
+  CalendarFormat _calendarFormat = CalendarFormat.month;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         TableCalendar(
+          onFormatChanged: (cf) {
+            if (cf != _calendarFormat)
+              setState(() {
+                _calendarFormat = cf;
+              });
+          },
+          calendarFormat: _calendarFormat,
           lastDay: DateTime.now().add(Duration(days: 100)),
           firstDay: DateTime.now(),
           focusedDay: DateTime.now(),
-          availableCalendarFormats: const {
-            CalendarFormat.month: 'Mês',
-            CalendarFormat.week: 'Semana',
+          availableCalendarFormats: {
+            CalendarFormat.month: "Mês",
+            CalendarFormat.week: "Semana"
           },
           headerStyle: HeaderStyle(
             formatButtonTextStyle:
                 TextStyle().copyWith(color: Colors.white, fontSize: 15.0),
             formatButtonDecoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.inverseSurface,
+              color: Theme.of(context).colorScheme.primary,
               borderRadius: BorderRadius.circular(16.0),
             ),
           ),
           calendarStyle: CalendarStyle(
             todayDecoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.inverseSurface,
+              color: Theme.of(context).colorScheme.primary,
               shape: BoxShape.circle,
             ),
             selectedDecoration: BoxDecoration(

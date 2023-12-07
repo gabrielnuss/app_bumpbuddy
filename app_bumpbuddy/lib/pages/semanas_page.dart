@@ -1,4 +1,3 @@
-import 'package:app_bumpbuddy/pages/detalhes_semanas_page.dart';
 import 'package:flutter/material.dart';
 
 class SemanasPage extends StatefulWidget {
@@ -9,84 +8,28 @@ class SemanasPage extends StatefulWidget {
 }
 
 class _SemanasPageState extends State<SemanasPage> {
-  ScrollController _scrollController = ScrollController();
-
-  List<String> semanas = [
-    "lib/assets/images/bump_buddy.png",
-    "lib/assets/images/bump_buddy.png",
-    "lib/assets/images/bump_buddy.png",
-    "lib/assets/images/bump_buddy.png",
-    "lib/assets/images/bump_buddy.png",
-    "lib/assets/images/bump_buddy.png",
-    "lib/assets/images/bump_buddy.png",
-    "lib/assets/images/bump_buddy.png",
-    "lib/assets/images/bump_buddy.png",
-    "lib/assets/images/bump_buddy.png",
-    "lib/assets/images/bump_buddy.png",
-    "lib/assets/images/bump_buddy.png",
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return NotificationListener<ScrollNotification>(
-      onNotification: (ScrollNotification scrollInfo) {
-        setState(() {}); // Rebuild the widget on scroll to update image scales
-        return true;
-      },
-      child: ListView.builder(
-        controller: _scrollController,
-        itemCount: semanas.length,
-        itemBuilder: (BuildContext context, int index) {
-          var semana = semanas[index];
-          double scale = 1.0;
-          double position = index * 100.0 - _scrollController.offset;
-          if (position < 0) {
-            scale = 1.0 +
-                position / 500; // Adjust the divisor for desired scaling effect
-          } else {
-            scale = 1.0 - position / 500;
-          }
-          scale = scale.clamp(0.5, 1.0); // Limit the minimum and maximum scale
-          return InkWell(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => DetalesSemanasPage(
-                            semana: index,
-                          )));
-            },
-            child: ParallaxImage(
-              scale: scale,
-              semana: semana,
-            ),
-          );
-        },
-      ),
-    );
-  }
-}
-
-class ParallaxImage extends StatelessWidget {
-  final double scale;
-
-  final String semana;
-
-  ParallaxImage({required this.scale, required this.semana});
+  Map<int, String> semanas = {
+    1: "lib/assets/images/Semana_1",
+    2: "lib/assets/images/Semana_1",
+    3: "lib/assets/images/Semana_1",
+    4: "lib/assets/images/Semana_1",
+    5: "lib/assets/images/Semana_1",
+    6: "lib/assets/images/Semana_1",
+    7: "lib/assets/images/Semana_1",
+    8: "lib/assets/images/Semana_1",
+    9: "lib/assets/images/Semana_1",
+    10: "lib/assets/images/Semana_1",
+    11: "lib/assets/images/Semana_1",
+    12: "lib/assets/images/Semana_1",
+    16: "lib/assets/images/Semana_1",
+    20: "lib/assets/images/Semana_1",
+    24: "lib/assets/images/Semana_1",
+    32: "lib/assets/images/Semana_1",
+    38: "lib/assets/images/Semana_1",
+  };
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Transform.scale(
-        scale: scale,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(300),
-          child: Image.asset(
-            semana,
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
-    );
+    return ListView();
   }
 }

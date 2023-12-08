@@ -1,4 +1,4 @@
-import 'package:app_bumpbuddy/pages/home_page.dart';
+import 'package:app_bumpbuddy/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
             inversePrimary: Color.fromRGBO(255, 216, 206, 1)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: LoginForm(),
     );
   }
 }

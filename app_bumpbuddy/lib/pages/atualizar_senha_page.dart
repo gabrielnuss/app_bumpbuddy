@@ -105,7 +105,8 @@ class _AtualizarSenhaPageState extends State<AtualizarSenhaPage> {
               style: ElevatedButton.styleFrom(
                 primary: Color.fromARGB(255, 255, 159, 134), // Cor do botão
               ),
-              child: Text('Atualizar Senha'),
+              child: Text('Atualizar Senha',
+                  style: TextStyle(color: Colors.white)),
             ),
           ],
         ),

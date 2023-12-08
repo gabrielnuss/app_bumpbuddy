@@ -132,7 +132,8 @@ class _CadastroPageState extends State<CadastroPage> {
               style: ElevatedButton.styleFrom(
                 primary: Color.fromARGB(255, 255, 159, 134), // Cor do botão
               ),
-              child: Text('Cadastrar-se'),
+              child:
+                  Text('Cadastrar-se', style: TextStyle(color: Colors.white)),
             ),
           ],
         ),

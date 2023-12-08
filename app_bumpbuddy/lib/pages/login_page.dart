@@ -108,18 +108,19 @@ class _LoginFormState extends State<LoginForm> {
                             width: double.infinity,
                             margin: EdgeInsets.symmetric(horizontal: 100),
                             child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: ((context) => MyHomePage())));
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: Color.fromARGB(
-                                    255, 255, 159, 134), // Cor do botão
-                              ),
-                              child: Text('Entrar'),
-                            ),
+                                onPressed: () {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: ((context) =>
+                                              MyHomePage())));
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: Color.fromARGB(
+                                      255, 255, 159, 134), // Cor do botão
+                                ),
+                                child: Text('Entrar',
+                                    style: TextStyle(color: Colors.white))),
                           ),
                         ],
                       )),
